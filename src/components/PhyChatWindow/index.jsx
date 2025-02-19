@@ -118,7 +118,7 @@ export default function PhyChatWindow({ setCurrentWindow }) {
                                 <span className="font-medium text-gray-600 dark:text-gray-300">B</span>
                             </div>
                             <div className="mx-2 text-2xl text-white uppercase font-bold">
-                                Biology
+                                Physics
                             </div>
                         </div>
                         <div className="mt-4">
@@ -252,7 +252,7 @@ export default function PhyChatWindow({ setCurrentWindow }) {
                                                 <span className="font-medium text-gray-600 dark:text-gray-300">AI</span>
                                             </div>
                                             <div className="mx-2 text-xl text-white font-bold">
-                                                Biology Helper
+                                                Physics Helper
                                             </div>
                                         </div>
                                         <div key={index} className="my-2">

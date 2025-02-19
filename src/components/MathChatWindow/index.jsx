@@ -115,10 +115,10 @@ export default function MathChatWindow({ setCurrentWindow }) {
                     <div className="flex justify-between">
                         <div className="flex items-center mt-4">
                             <div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                                <span className="font-medium text-gray-600 dark:text-gray-300">B</span>
+                                <span className="font-medium text-gray-600 dark:text-gray-300">M</span>
                             </div>
                             <div className="mx-2 text-2xl text-white uppercase font-bold">
-                                Biology
+                                Mathematics
                             </div>
                         </div>
                         <div className="mt-4">
@@ -252,7 +252,7 @@ export default function MathChatWindow({ setCurrentWindow }) {
                                                 <span className="font-medium text-gray-600 dark:text-gray-300">AI</span>
                                             </div>
                                             <div className="mx-2 text-xl text-white font-bold">
-                                                Biology Helper
+                                                Mathematics Helper
                                             </div>
                                         </div>
                                         <div key={index} className="my-2">
