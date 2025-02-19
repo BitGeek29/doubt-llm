@@ -47,13 +47,14 @@ export default function ChemChatWindow({ setCurrentWindow }) {
                     max_output_tokens: 8192,
                     // response_mime_type: "text/markdown",
                 },
-                        systemInstruction: `
+                systemInstruction: `
                     You are a tutor specializing in NCERT Chemistry for Class 11 and 12.
                     Help students understand complex topics, solve doubts, and guide them through problem-solving.
 
                     1. Solved solution with proper steps.
                     2. Topic or solution related video or source links. 
                     3. Solution refered book and it page number as per the given solution.
+                    4. write equation mathematically and use double dollar sign for markdown to render the latex.
 
                     Response Format:-
                     1.Question: Clearly restate or display the given question.  

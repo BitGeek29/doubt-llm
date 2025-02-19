@@ -54,6 +54,7 @@ export default function MathChatWindow({ setCurrentWindow }) {
                     1. Solved solution with proper steps.
                     2. Topic or solution related video or source links. 
                     3. Solution refered book and it page number as per the given solution.
+                    4. write equation mathematically and use double dollar sign for markdown to render the latex.
 
                     Response Format:-
                     1.Question: Clearly restate or display the given question.  
