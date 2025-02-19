@@ -35,6 +35,8 @@ function App() {
                                     <p className="font-medium text-xl">Master the chemical reactions and components</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className="mt-6 flex justify-center items-center gap-8 text-xs">
 
                             <div onClick={() => setCurrentWindow("math-chat")} className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 rounded-lg p-8 shadow-xs shadow-indigo-100 bg-[#b9d8ec]">
 
