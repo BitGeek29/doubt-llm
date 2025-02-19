@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ChemChatWindow from './components/ChemChatWindow';
 import BioChatWindow from './components/BioChatWindow';
+import PhyChatWindow from './components/PhyChatWindow';
+import MathChatWindow from './components/MathChatWindow';
 
 function App() {
     const [currentWindow, setCurrentWindow] = useState("choose-subject");
@@ -33,6 +35,24 @@ function App() {
                                     <p className="font-medium text-xl">Master the chemical reactions and components</p>
                                 </div>
                             </div>
+
+                            <div onClick={() => setCurrentWindow("math-chat")} className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 rounded-lg p-8 shadow-xs shadow-indigo-100 bg-[#b9d8ec]">
+
+                                <div className="mt-1.5 sm:mt-0 text-left">
+                                    <p className="text-gray-500 font-bold text-3xl text-indigo-700">Mathematics</p>
+
+                                    <p className="font-medium text-xl">Solve problems and discover mathematical wonders</p>
+                                </div>
+                            </div>
+
+                            <div onClick={() => setCurrentWindow("phy-chat")} className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2 rounded-lg p-8 shadow-xs shadow-indigo-100 bg-[#b9d8ec]">
+
+                                <div className="mt-1.5 sm:mt-0 text-left">
+                                    <p className="text-gray-500 font-bold text-3xl text-indigo-700">Physics</p>
+
+                                    <p className="font-medium text-xl">Explore the laws of motion and the universe</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,6 +62,12 @@ function App() {
             )}
             {currentWindow === "bio-chat" && (
                 <BioChatWindow setCurrentWindow={setCurrentWindow} />
+            )}
+            {currentWindow === "phy-chat" && (
+                <PhyChatWindow setCurrentWindow={setCurrentWindow} />
+            )}
+            {currentWindow === "math-chat" && (
+                <MathChatWindow setCurrentWindow={setCurrentWindow} />
             )}
 
         </>
