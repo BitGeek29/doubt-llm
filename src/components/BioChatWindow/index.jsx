@@ -23,7 +23,7 @@ const formatAnswer = (response) => {
   if (references?.length > 0) {
     details += "\n\n### References:\n";
     references.forEach((ref, index) => {
-      details += `- [${ref.documentMetadata.title} (Page ${ref.documentMetadata.pageIdentifier})](${ref.documentMetadata.uri})\n`;
+      details += `- [${ref.chunkInfo.documentMetadata.title} (Page ${ref.chunkInfo.documentMetadata.pageIdentifier})](${ref.chunkInfo.documentMetadata.uri})\n`;
     });
   }
 
