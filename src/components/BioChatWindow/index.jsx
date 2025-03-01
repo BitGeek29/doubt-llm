@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import MarkdownPreviewer from '../MarkdownPreviewer';
 
 const getAccessToken = async () => {
