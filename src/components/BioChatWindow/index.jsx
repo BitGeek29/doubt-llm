@@ -12,6 +12,32 @@ const getAccessToken = async () => {
   }
 };
 
+const formatAnswer = (response) => {
+  if (!response?.answer) return "No answer available.";
+
+  const { answerText, references, relatedQuestions } = response.answer;
+
+  let details = "";
+
+  // Add references
+  if (references?.length > 0) {
+    details += "\n\n### References:\n";
+    references.forEach((ref, index) => {
+      details += `- [${ref.documentMetadata.title} (Page ${ref.documentMetadata.pageIdentifier})](${ref.documentMetadata.uri})\n`;
+    });
+  }
+
+  // Add related questions
+  if (relatedQuestions?.length > 0) {
+    details += "\n\n### Related Questions:\n";
+    relatedQuestions.forEach((question) => {
+      details += `- ${question}\n`;
+    });
+  }
+
+  return answerText + details;
+};
+
 export default function BioChatWindow({ setCurrentWindow }) {
   const [inputValue, setInputValue] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -113,7 +139,7 @@ export default function BioChatWindow({ setCurrentWindow }) {
       const responseData = await response.json(); // Parse response JSON
       console.log(responseData);
 
-      const responseText = responseData.answer.answerText;
+      const responseText = formatAnswer(responseData);
       console.log(responseText);
       setPromptResponses([responseText]);
       // setInputValue('');
