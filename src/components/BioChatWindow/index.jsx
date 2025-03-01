@@ -1,6 +1,17 @@
 import React, { useRef, useState } from 'react';
 import MarkdownPreviewer from '../MarkdownPreviewer';
 
+const getAccessToken = async () => {
+  try {
+    const response = await fetch("/api/get-token");
+    const data = await response.json();
+    return data.access_token;
+  } catch (error) {
+    console.error("Error fetching access token:", error);
+    return null;
+  }
+};
+
 export default function BioChatWindow({ setCurrentWindow }) {
   const [inputValue, setInputValue] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -8,6 +19,26 @@ export default function BioChatWindow({ setCurrentWindow }) {
   const [promptResponses, setPromptResponses] = useState([]);
   const [loading, setLoading] = useState(false);
   const hiddenFileInput = useRef(null);
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    // Function to update the token
+    const updateToken = async () => {
+      const accessToken = await getAccessToken();
+      if (accessToken) {
+        setToken(accessToken);
+      }
+    };
+
+    // Fetch token initially
+    updateToken();
+
+    // Set an interval to refresh token every 15 minutes (900,000ms)
+    const intervalId = setInterval(updateToken, 900000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
 
 
   const handleInputChange = (e) => setInputValue(e.target.value);
@@ -41,7 +72,7 @@ export default function BioChatWindow({ setCurrentWindow }) {
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${import.meta.env.VITE_GCLOUD_AUTH_ACCESS_TOKEN}`,
+            'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
