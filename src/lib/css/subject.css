@@ -1,0 +1,79 @@
+/* Specific styles for the Subject component */
+.container .subject {
+    position: fixed; /* Fixes the position relative to the viewport */
+    top: 0; /* Sticks it to the top */
+    right: 0; /* Sticks it to the right */
+    width: auto;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 2.5vh;
+    margin-right: 2.5vh;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  
+  .subject .subject-item {
+    cursor: pointer;
+    padding: 8px;
+    width: 228px;
+    flex-shrink: 0;
+    display: flex;
+    scroll-snap-align: center;
+    flex-direction: column;
+    align-items: flex-end;
+    border-radius: 50px;
+    justify-content: space-between;
+    background: var(--secondary-color);
+    transition: 0.3s ease;
+  }
+  .subject .subject-item:hover {
+    background: var(--secondary-hover-color);
+  }
+  .subject .subject-item .text {
+    font-size: 1.1rem;
+  }
+  .subject .subject-item .icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    font-size: 1.4rem;
+    align-self: flex-end;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    color: #1d7efd;
+    background: var(--primary-color);
+  }
+  .subject .subject-item:nth-child(2) .icon {
+    color: #28a745;
+  }
+  .subject .subject-item:nth-child(3) .icon {
+    color: #ffc107;
+  }
+  .subject .subject-item:nth-child(4) .icon {
+    color: #6f42c1;
+  }
+  .subject-item .subject-footer {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    align-items: end;
+    align-self: stretch;
+  }
+  .subject-item .subject-title {
+    font-size: 1.2rem;
+    color: #1d7efd;
+    margin-bottom: 8px;
+  }
+  .subject .subject-item:nth-child(2) .subject-title {
+    color: #28a745;
+  }
+  .subject .subject-item:nth-child(3) .subject-title {
+    color: #ffc107;
+  }
+  .subject .subject-item:nth-child(4) .subject-title {
+    color: #6f42c1;
+  }
+  
